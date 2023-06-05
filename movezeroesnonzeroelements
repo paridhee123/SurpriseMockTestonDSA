@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+public class moveNums {
+    public static void moveNums(int[] nums) {
+        int left = 0;
+        int right = 0;
+
+        while (right < nums.length) {
+            if (nums[right] != 0) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
+            }
+            right++;
+        }
+    }
+
+public static void main(String[] args) {
+        int[] inputArr = {0, 1, 0, 3, 12};
+        moveNums(inputArr);
+        System.out.println(Arrays.toString(inputArr));
+    }
+}
